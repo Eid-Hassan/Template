@@ -116,6 +116,22 @@ ul {
 }
 @media (max-width: 1610px) {.dots {display: none;}}
 /* End Global Rules */
+/* Start button Up */
+.btnUp {
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 4px;
+    bottom: 20px;
+    right: 20px;
+    /* display: none; */
+    position: fixed;
+    cursor: pointer;
+    z-index: 1000;
+}
+/* End button Up */
 /* Start Header */
 .header {
     background-color: white;
@@ -130,6 +146,7 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    overflow: hidden;
 }
 .header .logo {
     color: var(--main-color);
@@ -328,6 +345,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 40px;
+    overflow: hidden;
 }
 .articales .box{
     box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
@@ -336,6 +354,8 @@ ul {
     overflow: hidden;
     transition: transform var(--main-transition), box-shadow var(--main-transition);
 }
+.articales .right{transform: translateX(500%);transition: 1s;}
+.artCenter{transform: translateX(0);}
 .articales .box:hover {
     transform: translateY(-10px);
     box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
@@ -417,7 +437,10 @@ ul {
 .features .container .box {
     text-align: center;
     border: 1px solid #CCC;
+    transition: 1s;
 }
+.featheadin{opacity: 0;}
+.featoop{opacity: 1;}
 .features .container .box .img-holder {
     position: relative;
     overflow: hidden;
@@ -700,15 +723,10 @@ ul {
 }
 /* End Services */
 /* Start Skills */
-.our-skills {
-        padding: var(--main-padding) 0;
-        background-color: white;
-        position: relative;
-}
-.our-skills .container {
-    display: flex;
-    align-items: center;
-}
+.our-skills {padding: var(--main-padding) 0;background-color: white;position: relative;}
+.our-skills .container {display: flex;align-items: center;overflow: hidden;}
+.our-skills .container > img{transform: translate(-100%);transition: 0.5s;}
+.our-skills .container .to-skills{transform: translate(0);}
 @media (max-width: 991px) {.our-skills img {display: none;}}
 .our-skills .skills {flex: 1;}
 .our-skills .skill h3 {
@@ -734,6 +752,7 @@ ul {
     left: 0;
     height: 100%;
     background-color: var(--main-color);
+    transition: width 0.5s linear;
 }
 /* End Skills */
 /* Start Work Steps */
@@ -1070,7 +1089,8 @@ ul {
     cursor: pointer;
     transition: var(--main-transition);
 }
-.videos .holder .list ul li:hover{
+.videos .holder .list ul li:hover,
+.videos .holder .list ul li.active{
     color: var(--main-color);
     background-color: #fafafa;
     transform: translate(5px);
@@ -1087,12 +1107,13 @@ ul {
     justify-content: space-between;
     padding: 10px;
 }
-.videos .holder .preview img {max-width: 100%;}
+.videos .holder .preview > div > video {max-width: 100%;}
+.videos .holder .preview > div:not(:first-child){display: none;}
 .videos .holder .preview .info{
     padding: 20px;
     background-color: white;
     border-radius: 6px;
-    margin-top: 10px;
+    margin-top: 40%;
 }
 /* End videos */
 /* Start Stats */
@@ -1123,7 +1144,10 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    overflow: hidden;
 }
+.stats .right {transform: translateX(400%);transition: 1s;}
+.statcenter{transform: translateX(0);}
 .stats .box {
     position: relative;
     padding: 30px 15px;

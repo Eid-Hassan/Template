@@ -1,0 +1,11 @@
+// Import Variables
+@use "./variables/colors";
+
+// Import Pages
+@use "./pages/Landing";
+
+// Import Global Rules
+@use "./Layout/global-rules";
+
+// Import Articales
+@use "./pages/artical" as *;
